@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DALO Website</title>
+	<style>
+		body {
+			background-color: #ADD8E6;
+			background-image: url('background.jpg');
+			background-size: cover;
+			background-blur: 10px;
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		.header {
+			display: flex;
+			align-items: center;
+			padding: 10px;
+			background-color: rgba(255, 255, 255, 0.5);
+		}
+
+		.logo {
+			width: 100px;
+			height: 100px;
+			margin-right: 20px;
+			border-radius: 50%;
+			background-image: url('dalo.gif');
+			background-size: cover;
+			animation: rotate 2s infinite linear;
+			cursor: pointer;
+		}
+
+		@keyframes rotate {
+			from {
+				transform: rotate(0deg);
+			}
+			to {
+				transform: rotate(360deg);
+			}
+		}
+
+		.tab-container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 80vh;
+		}
+
+		.tab {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 20px;
+			margin: 20px;
+			background-color: rgba(255, 255, 255, 0.5);
+			border-radius: 50%;
+			cursor: pointer;
+		}
+
+		.tab img {
+			width: 100px;
+			height: 100px;
+			margin-bottom: 10px;
+			border-radius: 50%;
+		}
+
+		.tab h3 {
+			margin: 0;
+			font-size: 24px;
+			font-weight: normal;
+		}
+
+		.tab p {
+			margin: 10px 0 0;
+			font-size: 16px;
+			font-weight: bold;
+		}
+
+		.tab:hover {
+			background-color: #FFF;
+		}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<div class="logo"></div>
+		<h1>DALO</h1>
+	</div>
+	<div class="tab-container">
+		<a href="https://www.ign.com/community" target="_blank" class="tab">
+			<img src="ign-community.png" alt="IGN-Community">
+			<h3>IGN-Community</h3>
+			<p>Visit</p>
+		</a>
+		<a href="https://www.rolecity.com/" target="_blank" class="tab">
+			<img src="rolecity.png" alt="Rolecity">
+			<h3>Rolecity</h3>
+			<p>Visit</p>
+		</a>
+		<a href="client/index.html" class="tab">
+			<img src="ign-client.png" alt="IGN-Client">
+			<h3>IGN-Client</h3>
+			<p>Download</p>
+		</a>
+	</div>
+	<script>
+		const logo = document.querySelector('.logo');
+
+		logo.addEventListener('click', () => {
+			logo.classList.remove('rotate');
+			void logo.offsetWidth;
+			logo.classList.add('rotate');
+		});
+	</script>
+</body>
+</html>
